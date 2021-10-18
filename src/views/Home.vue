@@ -5,8 +5,8 @@
         <div class="flex flex-col w-full md:w-5/12 rounded-lg">
             <div class="m-auto w-4/5 mt-4 mb-0" style="background-color:#000401;border-bottom: 1px solid #4E545C;">
                 <div v-for="(audio,indexo) in audios.slice(index,index+1)" :key="indexo" class="mb-4">
-                    <h3 class="text-xl font-semibold" style="color:#E5E8E8">{{audio.name}}</h3>
-                    <p class="text-sm mt-1 artist-label" style="color:#8D9797">{{audio.artist}}</p>
+                    <h3 class="text-xl font-semibold" style="color:#E5E8E8;">{{audio.name}}</h3>
+                    <p class="text-sm mt-1 artist-label" style="color:#8D9797;">{{audio.artist}}</p>
                 </div> 
                 <div class="m-auto relative" style="width:100%;height:90%;background-color:#000401;">
                     <img class="w-full block m-auto h-full" src="@/assets/song_cover.png" alt="Album Pic">
@@ -39,16 +39,16 @@
       </div>
       <div class="w-7/12 hidden md:block">
           
-          <ul class="w-full overflow-auto m-auto mb-2 p-2" id="journal-scroll" style="background-color:#000401;max-height:100%">
+          <ul class="w-full overflow-auto m-auto mb-2 p-2" id="journal-scroll" style="background-color:#000401;max-height:100%;">
               <li @click="selectSound(indexo)" :style="indexo == index ? '' : ''" :class="indexo == index ? 'active-song-bg':''" class="flex py-1 rounded cursor-pointer w-11/12 m-auto" v-for="(audio,indexo) in audios" :key="indexo">
                   <div class="w-1/5 font-semibold m-auto">
                       
-                      <div :style="indexo == index ? 'color:#000401' : 'color:#E5E8E8'">{{indexo + 1}}</div>
+                      <div :style="indexo == index ? 'color:#000401;' : 'color:#E5E8E8;'">{{indexo + 1}}</div>
                   </div>
                   <div class="w-3/5 font-semibold text-left m-auto">
                       <div class="font-semibold text-sm">
-                          <p :style="indexo == index ? 'color:#000401' : 'color:#E5E8E8'">{{audio.name}}</p>
-                          <p :style="indexo == index ? 'color:#4E545C' : 'color:#8D9797'" class="text-xs text-gray-500">{{audio.artist}}</p>
+                          <p :style="indexo == index ? 'color:#000401;' : 'color:#E5E8E8;'">{{audio.name}}</p>
+                          <p :style="indexo == index ? 'color:#4E545C;' : 'color:#8D9797;'" class="text-xs text-gray-500">{{audio.artist}}</p>
                       </div>
                   </div>
                   <div class="w-1/5 m-auto">
@@ -64,7 +64,7 @@
           </ul>
       </div>
     </div>
-    <div class="w-full from-gray-300 to-gray-400 relative z-10" style="background-color:#000401;height:5%">
+    <div class="w-full from-gray-300 to-gray-400 relative z-10" style="background-color:#000401;height:5%;">
         <div class="flex w-11/12 h-16 items-center justify-around m-auto">
             
             <div class="w-2/12 md:flex items-center hidden" v-for="(audio,indexo) in audios.slice(index, index + 1)" :key="indexo">
@@ -99,7 +99,7 @@
             <div class="w-1/5 flex md:w-2/12 m-auto items-center">
                 <div class="w-3/12 md:w-2/12 hover:bg-gray-500 rounded-full md:p-1" @click="mute()">
                      
-                    <svg v-if="mutePlayer" class="w-6 h-6 m-auto text-red-500 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color:#E5E8E8">
+                    <svg v-if="mutePlayer" class="w-6 h-6 m-auto text-red-500 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color:#E5E8E8;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd" />
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
                     </svg>
